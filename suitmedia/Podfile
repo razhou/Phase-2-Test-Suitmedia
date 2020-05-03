@@ -1,0 +1,22 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'suitmedia' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  # Pods for suitmedia
+    pod 'AlamofireNetworkActivityLogger', '~> 2.0'
+    pod 'Alamofire', '~> 4.7'
+    pod 'SDWebImage', '~> 5.0'
+    pod 'MBProgressHUD'
+
+  target 'suitmediaTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'suitmediaUITests' do
+    # Pods for testing
+  end
+
+end
