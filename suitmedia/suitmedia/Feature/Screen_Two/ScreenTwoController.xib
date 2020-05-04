@@ -27,43 +27,6 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZQW-UT-jY4" customClass="UIControl">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="612"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0o-2T-M9w">
-                                    <rect key="frame" x="14" y="170" width="292" height="122"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3we-va-gmF">
-                                            <rect key="frame" x="14" y="8" width="264" height="45"/>
-                                            <color key="backgroundColor" red="0.84705882349999995" green="0.4941176471" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="45" id="4Jx-oi-VlG"/>
-                                            </constraints>
-                                            <state key="normal" title="Choose Event"/>
-                                            <connections>
-                                                <action selector="btnClickEvent:" destination="-1" eventType="touchUpInside" id="kx4-3J-7H2"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHL-Rr-rzL">
-                                            <rect key="frame" x="14" y="69" width="264" height="45"/>
-                                            <color key="backgroundColor" red="0.84705882349999995" green="0.4941176471" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="45" id="iDZ-EE-4mA"/>
-                                            </constraints>
-                                            <state key="normal" title="Choose Guest"/>
-                                            <connections>
-                                                <action selector="btnClickGuest:" destination="-1" eventType="touchUpInside" id="3vi-9k-coR"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    <constraints>
-                                        <constraint firstItem="3we-va-gmF" firstAttribute="leading" secondItem="w0o-2T-M9w" secondAttribute="leading" constant="14" id="Adn-hw-wvO"/>
-                                        <constraint firstAttribute="bottom" secondItem="NHL-Rr-rzL" secondAttribute="bottom" constant="8" id="N0e-vd-iRy"/>
-                                        <constraint firstItem="NHL-Rr-rzL" firstAttribute="top" secondItem="3we-va-gmF" secondAttribute="bottom" constant="16" id="Z24-bT-ntJ"/>
-                                        <constraint firstAttribute="trailing" secondItem="NHL-Rr-rzL" secondAttribute="trailing" constant="14" id="i5d-av-64B"/>
-                                        <constraint firstItem="3we-va-gmF" firstAttribute="top" secondItem="w0o-2T-M9w" secondAttribute="top" constant="8" id="onx-Ae-XO2"/>
-                                        <constraint firstAttribute="trailing" secondItem="3we-va-gmF" secondAttribute="trailing" constant="14" id="wZT-aN-1T4"/>
-                                        <constraint firstItem="NHL-Rr-rzL" firstAttribute="leading" secondItem="w0o-2T-M9w" secondAttribute="leading" constant="14" id="zzt-RA-SSS"/>
-                                    </constraints>
-                                </view>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_bright" translatesAutoresizingMaskIntoConstraints="NO" id="idn-PF-Mf5">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                     <constraints>
@@ -88,6 +51,49 @@
                                     <color key="textColor" red="0.84705882349999995" green="0.4941176471" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0o-2T-M9w">
+                                    <rect key="frame" x="14" y="170" width="292" height="122"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3we-va-gmF">
+                                            <rect key="frame" x="14" y="8" width="264" height="45"/>
+                                            <color key="backgroundColor" red="0.84705882349999995" green="0.4941176471" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="4Jx-oi-VlG"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                            <state key="normal" title="Choose Event">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnClickEvent:" destination="-1" eventType="touchUpInside" id="kx4-3J-7H2"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHL-Rr-rzL">
+                                            <rect key="frame" x="14" y="69" width="264" height="45"/>
+                                            <color key="backgroundColor" red="0.84705882349999995" green="0.4941176471" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="iDZ-EE-4mA"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                            <state key="normal" title="Choose Guest">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnClickGuest:" destination="-1" eventType="touchUpInside" id="3vi-9k-coR"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="3we-va-gmF" firstAttribute="leading" secondItem="w0o-2T-M9w" secondAttribute="leading" constant="14" id="Adn-hw-wvO"/>
+                                        <constraint firstAttribute="bottom" secondItem="NHL-Rr-rzL" secondAttribute="bottom" constant="8" id="N0e-vd-iRy"/>
+                                        <constraint firstItem="NHL-Rr-rzL" firstAttribute="top" secondItem="3we-va-gmF" secondAttribute="bottom" constant="16" id="Z24-bT-ntJ"/>
+                                        <constraint firstAttribute="trailing" secondItem="NHL-Rr-rzL" secondAttribute="trailing" constant="14" id="i5d-av-64B"/>
+                                        <constraint firstItem="3we-va-gmF" firstAttribute="top" secondItem="w0o-2T-M9w" secondAttribute="top" constant="8" id="onx-Ae-XO2"/>
+                                        <constraint firstAttribute="trailing" secondItem="3we-va-gmF" secondAttribute="trailing" constant="14" id="wZT-aN-1T4"/>
+                                        <constraint firstItem="NHL-Rr-rzL" firstAttribute="leading" secondItem="w0o-2T-M9w" secondAttribute="leading" constant="14" id="zzt-RA-SSS"/>
+                                    </constraints>
+                                </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KLs-IA-A5Y">
                                     <rect key="frame" x="85.5" y="8" width="234.5" height="128"/>
                                     <subviews>

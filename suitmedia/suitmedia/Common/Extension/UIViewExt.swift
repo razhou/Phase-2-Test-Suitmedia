@@ -16,15 +16,6 @@ extension UIView {
         self.layer.masksToBounds = true
     }
     
-    func roundedCorners(corners: UIRectCorner, radius: CGFloat) {
-        let size = CGSize(width: radius, height: radius)
-        let bezierPath = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * radius), byRoundingCorners: corners, cornerRadii: size)
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.frame = self.bounds
-        shapeLayer.path = bezierPath.cgPath
-        self.layer.mask = shapeLayer
-    }
-    
     
     
     func withBorder(cornerRadius: CGFloat = 0, borderWidth: CGFloat = 0.6 , colorBorder: UIColor){
@@ -38,5 +29,19 @@ extension UIView {
         
         let view = Bundle.main.loadNibNamed(nibName, owner: self, options: nil)?[0] as! UIView
         return view
+    }
+    
+    func addShadow(offset: CGSize, color: UIColor, radius: CGFloat, opacity: Float, cornerRadius: CGFloat = 10,scale: Bool = true) {
+      layer.masksToBounds = false
+      layer.shadowOffset = offset
+      layer.shadowColor = color.cgColor
+      layer.shadowRadius = radius
+      layer.shadowOpacity = opacity
+      layer.shadowPath = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height), cornerRadius: cornerRadius).cgPath
+        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+      
+      let backgroundCGColor = backgroundColor?.cgColor
+      backgroundColor = nil
+      layer.backgroundColor =  backgroundCGColor
     }
 }

@@ -16,10 +16,10 @@ class FourViewModel: NetworkService {
         self.delegate = delegate
     }
     
-    func fetchApi() {
+    func fetchApi(page:Int) {
         self.delegate?.load(isLoad: true)
-        
-        callApi(endPoint: Api.user.rawValue) { (response) in
+        let url = String(format: "%@?page=%i&per_page=10", Api.user.rawValue, page)
+        callApi(endPoint: url) { (response) in
             switch response {
                 
             case .success(_, let response):

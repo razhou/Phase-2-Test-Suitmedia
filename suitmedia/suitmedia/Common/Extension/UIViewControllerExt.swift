@@ -14,6 +14,10 @@ enum NavigationBarType {
     case showNavbar
     case hideNavBar
     case hideBackButton(title: String)
+    case backbuttontitle(title:String)
+    case backbuttonMap(title:String)
+    case backbuttonList(title:String)
+    
 }
 extension UIViewController {
     
@@ -105,6 +109,9 @@ extension UIViewController {
 
 extension UIViewController {
     
+    @objc func mapList() {}
+    @objc func search() {}
+    
     func setNavigationBarType(_ type: NavigationBarType) {
         navigationItem.rightBarButtonItems = []
         navigationItem.leftBarButtonItems = []
@@ -117,6 +124,17 @@ extension UIViewController {
             navigationController?.setNavigationBarHidden(false, animated: true)
             addTitleHeader(title: title)
             hideBackButton()
+        case .backbuttontitle(let title):
+            navigationController?.setNavigationBarHidden(false, animated: true)
+            self.addBackButtonTitle(title: title)
+        case .backbuttonMap(let title):
+             navigationController?.setNavigationBarHidden(false, animated: true)
+            addBackButtonTitle(title: title)
+            addSearchAndMap()
+        case .backbuttonList(let title):
+            navigationController?.setNavigationBarHidden(false, animated: true)
+            addBackButtonTitle(title: title)
+           addSearchAndList()
         }
         
     }
@@ -132,4 +150,59 @@ extension UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
+    private func addBackButtonTitle(title:String){
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.barTintColor = UIColor.orangeRed
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        let txtTitle = UILabel()
+        txtTitle.text =  title
+        txtTitle.textColor = UIColor.white
+        
+        let button = UIBarButtonItem(image: UIImage(named: "ic_back_white"), style: .plain, target: self, action: #selector(self.back))
+        let title = UIBarButtonItem(customView: txtTitle)
+        navigationItem.leftBarButtonItems = [button,title]
+    }
+    
+    @objc func back() {
+         if navigationController?.viewControllers.first == self {
+           dismiss(animated: true, completion: nil)
+         } else {
+           navigationController?.popViewController(animated: true)
+         }
+        
+       }
+    private func addSearchAndMap(){
+        let buttonSearch = UIButton(type: UIButton.ButtonType.custom)
+        buttonSearch.setImage(UIImage(named: "ic_search_white"), for: .normal)
+        buttonSearch.addTarget(self, action: #selector(search), for: .touchUpInside)
+        buttonSearch.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        let barBtnSearch = UIBarButtonItem(customView: buttonSearch)
+        
+        let buttonMap = UIButton(type: UIButton.ButtonType.custom)
+        buttonMap.setImage(UIImage(named: "ic_map_view"), for: .normal)
+        buttonMap.addTarget(self, action: #selector(mapList), for: .touchUpInside)
+        buttonMap.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        let barBtnMap = UIBarButtonItem(customView: buttonMap)
+        
+        self.navigationItem.rightBarButtonItems = [barBtnMap,barBtnSearch]
+    }
+    
+    
+    private func addSearchAndList(){
+          let buttonSearch = UIButton(type: UIButton.ButtonType.custom)
+          buttonSearch.setImage(UIImage(named: "ic_search_white"), for: .normal)
+          buttonSearch.addTarget(self, action: #selector(search), for: .touchUpInside)
+          buttonSearch.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+          let barBtnSearch = UIBarButtonItem(customView: buttonSearch)
+          
+          let buttonList = UIButton(type: UIButton.ButtonType.custom)
+          buttonList.setImage(UIImage(named: "ic_list_view"), for: .normal)
+          buttonList.addTarget(self, action: #selector(mapList), for: .touchUpInside)
+          buttonList.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+          let barBtnList = UIBarButtonItem(customView: buttonList)
+          
+          self.navigationItem.rightBarButtonItems = [barBtnList,barBtnSearch]
+      }
 }

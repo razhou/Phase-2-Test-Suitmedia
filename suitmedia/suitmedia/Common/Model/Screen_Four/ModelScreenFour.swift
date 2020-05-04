@@ -47,6 +47,7 @@ class DataUser: NSObject {
     var firstName : String!
     var id : Int!
     var lastName : String!
+    var page: Int! = 1
 
 
     /**
@@ -58,6 +59,7 @@ class DataUser: NSObject {
         firstName = dictionary["first_name"] as? String
         id = dictionary["id"] as? Int
         lastName = dictionary["last_name"] as? String
+        page = dictionary["page"] as? Int
     }
 
 }

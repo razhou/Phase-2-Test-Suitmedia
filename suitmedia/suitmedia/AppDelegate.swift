@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireNetworkActivityLogger
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static let current = UIApplication.shared.delegate as! AppDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        NetworkActivityLogger.shared.startLogging()
+        NetworkActivityLogger.shared.level = .debug
+        
+        Masterdata.initiateDB()
         // Override point for customization after application launch.
 //        window = UIWindow(frame: UIScreen.main.bounds)
 //           

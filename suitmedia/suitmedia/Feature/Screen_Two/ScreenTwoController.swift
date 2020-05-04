@@ -21,6 +21,8 @@ class ScreenTwoController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.btnEvent.rounded(cornerRadius: 11)
+        self.btnGuest.rounded(cornerRadius: 11)
         
        
     }
