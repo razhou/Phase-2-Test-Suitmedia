@@ -3,13 +3,6 @@ PODS:
   - AlamofireNetworkActivityLogger (2.4.0):
     - Alamofire (~> 4.8)
   - DZNEmptyDataSet (1.8.1)
-  - GoogleMaps (3.8.0):
-    - GoogleMaps/Maps (= 3.8.0)
-  - GoogleMaps/Base (3.8.0)
-  - GoogleMaps/Maps (3.8.0):
-    - GoogleMaps/Base
-  - GooglePlaces (3.8.0):
-    - GoogleMaps/Base (= 3.8.0)
   - MBProgressHUD (1.2.0)
   - Refreshable (1.2.0)
   - SDWebImage (5.7.1):
@@ -20,8 +13,6 @@ DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireNetworkActivityLogger (~> 2.0)
   - DZNEmptyDataSet
-  - GoogleMaps
-  - GooglePlaces
   - MBProgressHUD
   - Refreshable
   - SDWebImage (~> 5.0)
@@ -31,8 +22,6 @@ SPEC REPOS:
     - Alamofire
     - AlamofireNetworkActivityLogger
     - DZNEmptyDataSet
-    - GoogleMaps
-    - GooglePlaces
     - MBProgressHUD
     - Refreshable
     - SDWebImage
@@ -41,12 +30,10 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireNetworkActivityLogger: 6d3398c692d2c5d83b0c58793537860aca1e383d
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  GoogleMaps: 7c8d66d70e4e8c300f43a7219d8fdaad7b325a9a
-  GooglePlaces: d5f70c3e9e427964fdeca1301a665d276ccd8754
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   Refreshable: 0f76b6d198178e6cd2823a553fbf4e84a3dba527
   SDWebImage: 5d4cf6afccd9ac1d2ee701ed0c4917cbb1b80536
 
-PODFILE CHECKSUM: a87b8c9b0ef3e041ff1b9c61a30b20003a4f8996
+PODFILE CHECKSUM: 73964aec8da2faf69d267a3a9828a4007c77c7df
 
 COCOAPODS: 1.9.1

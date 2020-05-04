@@ -10,8 +10,6 @@ target 'suitmedia' do
     pod 'SDWebImage', '~> 5.0'
     pod 'MBProgressHUD'
     pod 'Refreshable'
-    pod 'GoogleMaps'
-    pod 'GooglePlaces'
     pod 'DZNEmptyDataSet'
 
   target 'suitmediaTests' do
